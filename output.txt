@@ -1,1 +1,44 @@
+void main() {
+ 
+  String customerName = 'Jalil Arongo';
+  int coffeeCount = 3;
+  double pricePerCoffee = 4.50;
+  bool isLoyaltyMember = true;
+
+ 
+  double subtotal = coffeeCount * pricePerCoffee; 
+  
+ 
+  int freeCoffeesEarned = coffeeCount ~/ 2; 
+  int remainingForNextReward = coffeeCount % 2; 
+
+  
+  double discount = isLoyaltyMember ? 2.50 : 0.00;
+  double finalTotal = subtotal - discount; 
+
+  
+  bool qualifiesForFreeShipping = finalTotal >= 10.00;
+  bool isLargeOrder = coffeeCount > 5;               
+
+ 
+  print('====================================');
+  print('       COFFEE SHOP ORDER SUMMARY    ');
+  print('====================================');
+  print('Customer Name: $customerName');
+  print('Loyalty Member: $isLoyaltyMember');
+  print('Items Ordered: $coffeeCount coffee(s) @ \$${pricePerCoffee.toStringAsFixed(2)} each');
+  print('------------------------------------');
+  print('Subtotal: \$${subtotal.toStringAsFixed(2)}');
+  print('Member Discount: -\$${discount.toStringAsFixed(2)}');
+  print('Final Total: \$${finalTotal.toStringAsFixed(2)}');
+  print('------------------------------------');
+  print('Reward Progress:');
+  print('  - Free Coffees Earned Today: $freeCoffeesEarned');
+  print('  - Purchases towards next free item: $remainingForNextReward');
+  print('------------------------------------');
+  print('Order Checks:');
+  print('  - Qualifies for Free Delivery (>= \$10.00): $qualifiesForFreeShipping');
+  print('  - Is Large Order (> 5 items): $isLargeOrder');
+  print('====================================');
+}
 
